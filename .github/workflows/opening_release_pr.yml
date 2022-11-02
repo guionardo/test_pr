@@ -24,7 +24,7 @@ jobs:
   post-validate:
     name: Post Validation
     needs: [validate]
-    if: needs.merged_release_version.outputs.version != ""
+    if: needs.validate.outputs.version != ""
     runs-on: ubuntu-latest
     steps:
       - run: |
